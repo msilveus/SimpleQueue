@@ -1,7 +1,7 @@
 // SimpleQueue.cpp
 #include "SimpleQueue.h"
 
-SimpleQueue::SimpleQueue(void *buffer, size_t element_size, size_t capacity)
+SimpleQueue::SimpleQueue(volatile void *buffer, size_t element_size, size_t capacity)
     : head(-1), tail(-1), size(0), capacity(capacity), queue(buffer), element_size(element_size) {}
 
 void SimpleQueue::reset() {
