@@ -6,7 +6,7 @@
 
 class SimpleQueue {
 public:
-    SimpleQueue(void *buffer, size_t element_size, size_t capacity);
+    SimpleQueue(volatile void *buffer, size_t element_size, size_t capacity);
     void reset();
     size_t count() const;
     bool isEmpty() const;
@@ -21,7 +21,7 @@ private:
     volatile int tail;
     volatile size_t size;
     size_t capacity;
-    void *queue;
+    volatile void *queue;
     size_t element_size;
 };
 
